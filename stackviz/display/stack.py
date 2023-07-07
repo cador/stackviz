@@ -6,6 +6,15 @@ from .chart import Chart
 from IPython.display import display, HTML
 import os
 
+# 获取当前脚本文件的绝对路径
+script_path = os.path.abspath(__file__)
+
+# 获取当前脚本文件所在的目录
+script_directory = os.path.dirname(script_path)
+
+# 获取父级目录
+parent_directory = os.path.dirname(script_directory)
+
 
 class Stack:
     """
@@ -25,7 +34,7 @@ class Stack:
                 self.css = css_file.read()
         else:
             self.css = css
-        with open(os.path.join(os.path.dirname(__file__), '../resources/template.tpl'), "r", encoding="UTF-8") as tpl_file:
+        with open(os.path.join(parent_directory, 'resources/template.tpl'), "r", encoding="UTF-8") as tpl_file:
             self.html = tpl_file.read()
         self.html = self.html.replace("${style}", css)
         self.rows_span = rows_span
