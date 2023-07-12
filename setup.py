@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='stackviz', 
-    version='0.0.17', 
+    version='0.0.18', 
     packages=find_packages(),
     package_data={
         'stackviz': ['stackviz/resources/*'],
